@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Customer</title>
+    <style>
+        .btn{
+            text-decoration: none;
+            text-align: center;
+            padding-inline: 10px;
+            background-color: green;
+            color: white;
+        }
+        label{
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{url_for('edit_cust',id=DATA.id)}}" method="POST">
+        <label for="" name="name">Customer Name</label>
+        <input type="text" name="name" value="{{DATA.name}}" id="name"> 
+        <label for="" name="name">Email</label>
+        <input type="text" name="email" value="{{DATA.email}}" id="email"> 
+        <label for="" name="name">Phone No</label>
+        <input type="text" name="phoneno" value="{{DATA.phoneno}}" id="phoneno"> 
+        <label for="" name="name">Password</label>
+        <input type="password" name="password" value="{{DATA.password}}" id="password">
+        <input type="submit" value="Edit Customer" class="btn"> 
+    </form>
+    
+</body>
+</html>

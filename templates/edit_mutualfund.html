@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit MutualFunds</title>
+    <style>
+        .btn{
+            text-decoration: none;
+            text-align: center;
+            padding-inline: 10px;
+            background-color: green;
+            color: white;
+        }
+        label{
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{url_for('edit_mutual',id=DATA1.id)}}" method="POST">
+        <label for="" name="name">Name</label>
+        <input type="text" name="name" value="{{DATA1.name}}" id="name"> 
+        <label for="" name="schemecode>schemecode</label>
+        <input type="text" name="schemecode" value="{{DATA1.schemecode}}" id="schemecode"> 
+        <label for="" name="nav">nav</label>
+        <input type="number" name="nav" value="{{DATA1.nav}}" id="nav"> 
+        <label for="" name="units">units</label>
+        <input type="number" name="units" value="{{DATA1.units}}" id="units">
+        <input type="submit" value="Edit MutualFunds" class="btn"> 
+    </form>
+    
+</body>
+</html>

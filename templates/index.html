@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        th,td{
+            padding-inline: 15px; ;
+            text-align: center;
+            color: white;
+        }
+        th{
+            background-color:darkblue;
+        }
+        td{
+            background-color:darkcyan;
+        }
+        .btn{
+            text-decoration: none;
+            text-align: center;
+            padding-inline: 10px;
+            background-color: green;
+            color: white;
+        }
+        .btn1{
+            text-decoration: none;
+            text-align: center;
+            padding-inline: 10px;
+            background-color: blue;
+            color: white;
+        }
+        .btn2{
+            text-decoration: none;
+            text-align: center;
+            padding-inline: 10px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Customer Details</h1>
+    <a href="{{url_for('add_cust')}}" class="btn">Add Customer</a><br><br>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>PHONE_NO</th>
+            <th>PASSWORD</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {%for i in DATA%}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phoneno}}</td>
+            <td>{{i.password}}</td>
+            <td><a href="{{url_for('edit_cust',id=i.id)}}" class="btn1">Edit</a></td>
+            <td><a href="{{url_for('delete_cust',id=i.id)}}" class="btn2">Delete</a></td>
+        {%endfor%}
+        </tr>
+        
+    </table>
+    <h1>MutualFunds Details</h1>
+    <a href="{{url_for('add_mutual')}}" class="btn">Add MutualFunds</a><br><br>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SCHEME_CODE</th>
+            <th>NAV</th>
+            <th>UNITS</th>
+            <th>TOTAL_VALUE</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {%for i in DATA1%}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.schemecode}}</td>
+            <td>{{i.nav}}</td>
+            <td>{{i.units}}</td>
+            <td>{{i.totalvalue}}</td>
+            <td><a href="{{url_for('edit_mutual',id=i.id)}}" class="btn1">Edit</a></td>
+            <td><a href="{{url_for('delete_mutual',id=i.id)}}" class="btn2">Delete</a></td>
+        {%endfor%}
+        </tr> 
+    </table>
+</body>
+</html>
